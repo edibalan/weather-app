@@ -6,9 +6,8 @@ import Conditions, { conditions } from "./components/Conditions.js";
 import DataHandler from "./handlers/DataHandler.js";
 import ThemeHandler from "./handlers/ThemeHandler.js";
 
-export const main = document.createElement("main"), extra = document.createElement("section"),
-CE = element => document.createElement(element), QS = element => document.querySelector(element),
-QSAll = element => document.querySelectorAll(element);
+export const main = document.createElement("main"), extra = document.createElement("section"), CE = element => document.createElement(element),
+QS = element => document.querySelector(element), QSAll = element => document.querySelectorAll(element);
 
 class App {
   constructor() {
@@ -38,10 +37,7 @@ class App {
   }
 
   static async render(city, key) {
-    const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3&aqi=no&alerts=no`, {method: "GET"}
-    ),
-    data = await response.json();
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3&aqi=no&alerts=no`, {method: "GET"}), data = await response.json();
 
     try {
       if(response.status === 200) {
