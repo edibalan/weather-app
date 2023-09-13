@@ -1,6 +1,6 @@
 {
   "name": "Weather App",
-  "start_url": ".",
+  "start_url": "https://edibalan.github.io/weather-app",
   "display": "standalone",
   "background_color": "#FFFFFF00",
   "theme_color": "#FFFFFF00",
