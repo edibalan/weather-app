@@ -39,7 +39,7 @@ class App {
 
   static async render(city, key) {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3&aqi=no&alerts=no`, {method: "GET"}
+      `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=3&aqi=no&alerts=no`, {method: "GET"}
     ),
     data = await response.json();
 
