@@ -51,7 +51,7 @@ export default class Conditions {
               </div>
             </div>
             <img alt="conditions-icon" class="conditions-icon"
-              src="/media/${this.weather_conditions.icons[i]}.png" />
+              src="https://edibalan.github.io/weather-app/media/${this.weather_conditions.icons[i]}.png" />
           </div>
         </div>
       `;
