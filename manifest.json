@@ -1,0 +1,21 @@
+{
+  "name": "Weather App",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FFFFFF00",
+  "theme_color": "#FFFFFF00",
+  "icons": [
+    {
+      "src": "./media/cloudy-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./media/cloudy-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
