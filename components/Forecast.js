@@ -13,10 +13,7 @@ export default class Forecast {
       forecastContent.innerHTML += `
         <div class="forecast-element | container">
           <p class="forecast-element-time">
-            ${new Date(data.forecast.forecastday[0].hour[i].time).toLocaleTimeString("en-GB", {
-              "hour": "2-digit",
-              "minute": "2-digit"
-            })}
+            ${new Date(data.forecast.forecastday[0].hour[i].time).toLocaleTimeString("en-GB", { "hour": "2-digit", "minute": "2-digit" })}
           </p>
           <img alt="forecast-icon" class="forecast-element-icon"
             src="${data.forecast.forecastday[0].hour[i].condition.icon}" />
