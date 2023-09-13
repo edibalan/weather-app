@@ -2,7 +2,7 @@
 export const menuContainer = document.createElement("div"), menu = document.createElement("select");
 export default class CitySelector {
   async render() {
-    const response = await fetch(`/data/cities.json`, {method: "GET"}), data = await response.json(),
+    const response = await fetch(`https://edibalan.github.io/weather-app/data/cities.json`, {method: "GET"}), data = await response.json(),
     option = document.createElement("option");
 
     option.innerText = "Choose a city";
@@ -14,9 +14,7 @@ export default class CitySelector {
 
     try {
       if (response.status === 200) {
-        data.forEach(city => menu.innerHTML += `
-          <option class="fs-x-small fw-normal" value="${city}">${city}</option>`
-        );
+        data.forEach(city => menu.innerHTML += `<option class="fs-x-small fw-normal" value="${city}">${city}</option>`);
       } else {
         console.log(`Something went wrong... Status code: ${response.status}`);
       }
