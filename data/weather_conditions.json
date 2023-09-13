@@ -1,0 +1,18 @@
+[
+  [
+    "Clouds", "Feels like", "Gust", "Humidity", "Pressure", "Rainfall",
+    "Sunrise", "Sunset", "UV Index", "Visibility", "Wind dir.", "Wind spd."
+  ],
+
+  [
+    "data.current.cloud", "data.current.feelslike_c", "data.current.gust_kph", "data.current.humidity",
+    "data.current.pressure_mb", "data.current.precip_mm", "data.forecast.forecastday[0].astro.sunrise",
+    "data.forecast.forecastday[0].astro.sunset", "data.current.uv", "data.current.vis_km",
+    "data.current.wind_dir", "data.current.wind_kph"
+  ],
+
+  [
+    "clouds-icon", "feels-icon", "gust-icon", "humidity-icon", "pressure-icon", "precip-icon",
+    "sunrise-icon", "sunset-icon", "uv-icon", "visibility-icon", "direction-icon", "wind-icon"
+  ]
+]
