@@ -450,8 +450,8 @@ a, button, .menu {background-color: transparent; border: none; outline: none;}
 
   .conditions-element {aspect-ratio: 2.1 / 1;}
   .conditions-element-content {width: 9.25vw;}
-  .conditions-element-header {margin-top: 0.775vh;}
-  .conditions-icon {width: 3.25vw;}
+  .conditions-element-header {margin-top: 0.925vh;}
+  .conditions-icon {width: 3.125vw;}
 }
 
 /* HEIGHT >= 700px */
