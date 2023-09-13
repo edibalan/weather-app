@@ -62,14 +62,8 @@ export default class DataHandler {
 
     this.forecastDayToCelsius = day => {
       this.forecastDegrees.forEach(elem => elem.innerText = "\xb0C");
-      
-      this.forecastValues.forEach((value, index) => 
-        value.innerText = `${(data.forecast.forecastday[day].hour[index].temp_c).toFixed()}`
-      );
-  
-      this.forecastIcons.forEach((icon, index) => 
-        icon.src = `${data.forecast.forecastday[day].hour[index].condition.icon}`
-      );
+      this.forecastIcons.forEach((icon, index) => icon.src = `${data.forecast.forecastday[day].hour[index].condition.icon}`);
+      this.forecastValues.forEach((value, index) => value.innerText = `${(data.forecast.forecastday[day].hour[index].temp_c).toFixed()}`);
     };
 
     this.todayForecast = () => {
