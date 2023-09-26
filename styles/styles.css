@@ -69,7 +69,7 @@ a, button, .menu {background-color: transparent; border: none; outline: none;}
 .overview-container,.overview-content,.extra-container,.forecast-container,.conditions-container {width: 100vw;}
 .overview-container,.overview-content,.extra-container {height: 100vh;}
 .overview-container {
-  background-image: url(/media/day-background.webp);
+  background-image: url(https://edibalan.github.io/weather-app/media/day-background.webp);
   background-position: center -1.5vh;
   background-repeat: no-repeat;
   background-size: 51vh;
