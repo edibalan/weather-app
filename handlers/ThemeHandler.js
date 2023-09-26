@@ -22,46 +22,34 @@ export default class ThemeHandler {
       extra.style.backgroundImage = `linear-gradient(${gradient})`;
     };
 
-    this.darkModeOne = () => this.themeHandler("#F4F4F4", "#1C2657", "night-background.webp", "90deg, #1C2657, #3F81CC");
-    this.darkModeTwo = () => this.themeHandler("#F4F4F4", "#1C2657", "night-background.webp", "#1C2657, #3F81CC");
-    this.lightModeOne = () => this.themeHandler("#000", "#8FCBE5", "day-background.webp", "90deg, #8FCBE5, #3F81CC");
-    this.lightModeTwo = () => this.themeHandler("#000", "#8FCBE5", "day-background-landscape.webp", "#8FCBE5, #3F81CC");
-    this.lightModeThree = () => this.themeHandler("#000", "#8FCBE5", "day-background.webp", "#8FCBE5, #3F81CC");
+    this.darkMode1 = () => this.themeHandler("#F4F4F4", "#1C2657", "night-background.webp", "90deg, #1C2657, #3F81CC");
+    this.darkMode2 = () => this.themeHandler("#F4F4F4", "#1C2657", "night-background.webp", "#1C2657, #3F81CC");
+    this.lightMode1 =() => this.themeHandler("#000", "#8FCBE5", "day-background.webp", "90deg, #8FCBE5, #3F81CC");
+    this.lightMode2 =() => this.themeHandler("#000", "#8FCBE5", "day-background-landscape.webp", "#8FCBE5, #3F81CC");
+    this.lightMode3 =() => this.themeHandler("#000", "#8FCBE5", "day-background.webp", "#8FCBE5, #3F81CC");
   }
 
   initiate() {
-    if (screen.width > 949 && screen.orientation.type === "portrait-primary" && (this.hour <= 6 || this.hour > 18)) {
-      this.darkModeTwo();
-    } else if (screen.width > 949 && (this.hour <= 6 || this.hour > 18)) {
-      this.darkModeOne();
-    } else if (this.hour <= 6 || this.hour > 18) {
-      this.darkModeTwo();
-    }
-    
-    if (screen.width > 949 && screen.orientation.type === "portrait-primary" && (this.hour > 6 && this.hour < 19)) {
-      this.lightModeThree();
-    } else if (screen.width > 949 && (this.hour > 6 && this.hour < 19)) {
-      this.lightModeOne();
-    } else if (screen.orientation.type === "landscape-primary" && (this.hour > 6 && this.hour < 19)) {
-      this.lightModeTwo();
-    } else if (this.hour > 6 && this.hour < 19) {
-      this.lightModeThree();
-    }
+    const isDesktop = window.innerWidth > 949, isLandscape = window.innerHeight < window.innerWidth,
+    isPortrait = window.innerHeight > window.innerWidth, isDay = this.hour > 6 && this.hour < 20,
+    isNight = this.hour <= 6 || this.hour > 19;
 
+    if (isDesktop && isPortrait && isNight) { this.darkMode2() }
+    else if (isDesktop && isNight) { this.darkMode1() }
+    else if (isNight) this.darkMode2();
+    
+    if (isDesktop && isPortrait && isDay) { this.lightMode3() }
+    else if (isDesktop && isDay) { this.lightMode1() }
+    else if (isLandscape && isDay) { this.lightMode2() }
+    else if (isDay) this.lightMode3();
+    
     window.addEventListener("orientationchange", () => {
-      if ((screen.width > 949 && screen.orientation.type === "landscape-primary") && (this.hour > 6 && this.hour < 19)) {
-        this.lightModeOne();
-      } else if (screen.orientation.type === "landscape-primary" && (this.hour > 6 && this.hour < 19)) {
-        this.lightModeTwo();
-      } else if (screen.orientation.type === "portrait-primary" && (this.hour > 6 && this.hour < 19)) {
-        this.lightModeThree();
-      }
+      if (isDesktop && isLandscape && isDay) { this.lightMode1() }
+      else if (isLandscape && isDay) { this.lightMode2() }
+      else if (isPortrait && isDay) this.lightMode3();
   
-      if ((screen.width > 949 && screen.orientation.type === "landscape-primary") && (this.hour <= 6 || this.hour > 18)) {
-        this.darkModeOne();
-      } else if (this.hour <= 6 || this.hour > 18) {
-        this.darkModeTwo();
-      }
+      if (isDesktop && isLandscape && isNight) { this.darkMode1() }
+      else if (isNight) this.darkMode2();
     });
   }
 }
