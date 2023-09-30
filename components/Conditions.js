@@ -7,11 +7,7 @@ export default class Conditions {
     this.conditionsHeader = CE("div");
 
     this.weather_conditions = {
-      labels: [
-        "Clouds", "Feels like", "Gust", "Humidity", "Pressure", "Rainfall",
-        "Sunrise", "Sunset", "UV Index", "Visibility", "Wind dir.", "Wind spd."
-      ],
-
+      labels: ["Clouds", "Feels like", "Gust", "Humidity", "Pressure", "Rainfall", "Sunrise", "Sunset", "UV Index", "Visibility", "Wind dir.", "Wind spd."],
       values: [
         data.current.cloud, data.current.feelslike_c, data.current.gust_kph, data.current.humidity,
         data.current.pressure_mb, data.current.precip_mm, data.forecast.forecastday[0].astro.sunrise,
@@ -43,7 +39,7 @@ export default class Conditions {
                 <span class="conditions-symbol | fw-sm-bold">${this.weather_conditions.symbols[i]}</span>
               </div>
             </div>
-            <img alt="conditions-icon" class="conditions-icon" src="/assets/${this.weather_conditions.icons[i]}.webp" />
+            <img alt="conditions-icon" class="conditions-icon" src="https://edibalan.github.io/weather-app/assets/${this.weather_conditions.icons[i]}.webp" />
           </div>
         </div>
       `;
