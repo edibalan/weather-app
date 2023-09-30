@@ -43,8 +43,7 @@ export default class Conditions {
                 <span class="conditions-symbol | fw-sm-bold">${this.weather_conditions.symbols[i]}</span>
               </div>
             </div>
-            <img alt="conditions-icon" class="conditions-icon"
-              src="/media/${this.weather_conditions.icons[i]}.webp" />
+            <img alt="conditions-icon" class="conditions-icon" src="/assets/${this.weather_conditions.icons[i]}.webp" />
           </div>
         </div>
       `;
