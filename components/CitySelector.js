@@ -10,6 +10,7 @@ export default class CitySelector {
 
     menu.id = "menu";
     menu.appendChild(option);
+    menu.setAttribute("aria-label", "menu");
     menu.setAttribute("class", "menu | fw-sm-bold");
 
     try {
