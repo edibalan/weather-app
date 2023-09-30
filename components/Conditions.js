@@ -28,12 +28,9 @@ export default class Conditions {
   }
 
   render() {
-    this.conditionsHeader.setAttribute("class", "conditions-header");
-    this.conditionsHeader.innerHTML = `
-      <h2 class="conditions-title | fw-sm-bold">Today's weather conditions</h2>
-    `;
-    
     this.conditionsContent.setAttribute("class", "conditions-content | container");
+    this.conditionsHeader.setAttribute("class", "conditions-header");
+    this.conditionsHeader.innerHTML = `<h2 class="conditions-title | fw-sm-bold">Today's weather conditions</h2>`;
     
     for(let i = 0; i < 12; i++) {
       this.conditionsContent.innerHTML += `
@@ -42,16 +39,12 @@ export default class Conditions {
             <div class="conditions-element-header">
               <p class="conditions-element-label | fs-small">${this.weather_conditions.labels[i]}</p>
               <div class="conditions-element-value">
-                <span class="conditions-value | fw-sm-bold">
-                  ${this.weather_conditions.values[i]}
-                </span>
-                <span class="conditions-symbol | fw-sm-bold"> 
-                  ${this.weather_conditions.symbols[i]}
-                </span>
+                <span class="conditions-value | fw-sm-bold">${this.weather_conditions.values[i]}</span>
+                <span class="conditions-symbol | fw-sm-bold">${this.weather_conditions.symbols[i]}</span>
               </div>
             </div>
             <img alt="conditions-icon" class="conditions-icon"
-              src="https://edibalan.github.io/weather-app/media/${this.weather_conditions.icons[i]}.png" />
+              src="/media/${this.weather_conditions.icons[i]}.webp" />
           </div>
         </div>
       `;
