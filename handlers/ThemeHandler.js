@@ -17,7 +17,7 @@ export default class ThemeHandler {
       this.titlesArr.forEach(title => title.style.color = color);
 
       overview.style.backgroundColor = background;
-      overview.style.backgroundImage = `url(https://edibalan.github.io/weather-app/media/${image})`;
+      overview.style.backgroundImage = `url(https://edibalan.github.io/weather-app/assets/${image})`;
       menu.style.borderBottomColor = color;
       extra.style.backgroundImage = `linear-gradient(${gradient})`;
     };
